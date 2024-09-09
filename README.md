@@ -11,6 +11,7 @@ Este projeto é uma API RESTful construída com Flask para envio de e-mails, uti
 - [Rodando com Docker](#rodando-com-docker)
 - [Logging](#logging)
 - [Coleta de Métricas com Prometheus](#coleta-de-métricas-com-prometheus)
+- [Integração Contínua com GitHub Actions](#integração-contínua-com-github-actions)
 - [Configuração do Virtual Environment (venv)](#configuração-do-virtual-environment-venv)
 - [Descrição do Teste Técnico - Microserviço de Envio de E-mails](#descrição-do-teste-técnico---microserviço-de-envio-de-e-mails)
 
@@ -165,6 +166,22 @@ Isso configurará o Prometheus para coletar as métricas da sua aplicação Flas
 
 Depois de configurado, você pode visualizar e monitorar as métricas da sua API através do **Prometheus** ou integrá-lo com ferramentas de visualização como **Grafana** para criar dashboards interativos.
 
+## Integração Contínua com GitHub Actions
+
+Este projeto possui integração contínua configurada com **GitHub Actions** para executar automaticamente os testes unitários sempre que um **push** ou **pull request** é feito na branch `main`.
+
+### Como Funciona:
+
+- Quando um novo **commit** é enviado para a branch `main`, ou um **pull request** é aberto, o GitHub Actions automaticamente:
+    1. Faz o **checkout** do código.
+    2. Configura o ambiente Python.
+    3. Instala as dependências do projeto listadas no `requirements.txt`.
+    4. Executa os testes unitários utilizando o **unittest**.
+
+### Monitoramento:
+
+- O status de cada execução do workflow pode ser visualizado na aba **Actions** do repositório no GitHub.
+- Em caso de falha nos testes, o desenvolvedor será notificado diretamente no GitHub, permitindo correções rápidas antes do merge na branch principal.
 
 ## Configuração do Virtual Environment (venv)
 
