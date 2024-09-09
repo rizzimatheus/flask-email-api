@@ -1,6 +1,6 @@
 from flask import request, jsonify
-from app.services.email_service import send_email_service
 from config import logger
+from app.services.email_service import send_email_service
 
 def send_email():
     try:
@@ -17,7 +17,7 @@ def send_email():
             return jsonify({'message': msg}), 400
 
         logger.info("Processando envio de email...")
-        
+
         # Chama o serviço para enviar o e-mail
         email_result = send_email_service(to, subject, body)
 

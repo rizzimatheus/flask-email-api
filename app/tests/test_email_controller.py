@@ -9,7 +9,7 @@ class TestEmailController(unittest.TestCase):
         self.app = app.test_client()
         self.app.testing = True
 
-    @patch('app.services.email_service.send_email_service')
+    @patch('app.controllers.email_controller.send_email_service')
     def test_send_email_success(self, mock_send_email):
         # Configura o mock para simular um envio bem-sucedido
         mock_send_email.return_value = "E-mail enviado com sucesso!"
