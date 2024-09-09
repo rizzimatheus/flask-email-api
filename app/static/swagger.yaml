@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: API de Envio de E-mails
+  description: Documentação da API para envio de e-mails.
+  version: "1.0.0"
+paths:
+  /send-email:
+    post:
+      summary: Envia um e-mail
+      description: Envia um e-mail para o destinatário especificado.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                to:
+                  type: string
+                  example: "destinatario@example.com"
+                subject:
+                  type: string
+                  example: "Assunto do E-mail"
+                body:
+                  type: string
+                  example: "Conteúdo do E-mail"
+      responses:
+        '200':
+          description: E-mail enviado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "E-mail enviado com sucesso"
+        '400':
+          description: Erro de validação
+        '500':
+          description: Erro interno do servidor

@@ -1,0 +1,30 @@
+# Byte-compiled / optimized
+__pycache__/
+*.pyc
+
+# Instalações
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Diretório virtual do ambiente
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Variáveis de ambiente
+.env
+
+# Testes / cobertura
+.coverage
+*.http
+
+# Arquivos temporários
+tmp/
+temp/
+
+# Logs
+*.log
+*.out
+logs/
