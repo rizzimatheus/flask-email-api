@@ -24,6 +24,8 @@ class TestEmailController(unittest.TestCase):
         # Faz a requisição POST para a rota /send-email
         response = self.app.post('/send-email', json=payload)
 
+        print(f"[{response.status_code}] {response.get_data(as_text=True)}")
+
         # Verifica o código de resposta
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"E-mail enviado com sucesso", response.data)
