@@ -16,6 +16,8 @@ def send_email():
             logger.info(f"[Fail: {msg}] Data: {data}")
             return jsonify({'message': msg}), 400
 
+        logger.info("Processando envio de email...")
+        
         # Chama o serviço para enviar o e-mail
         email_result = send_email_service(to, subject, body)
 
