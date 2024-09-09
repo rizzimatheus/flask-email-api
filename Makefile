@@ -15,7 +15,6 @@ ENV_FILE = .env
 .PHONY: help
 help:
 	@echo "Comandos disponíveis:"
-	@echo "  make init               - Instala as dependências do projeto"
 	@echo "  make run                - Inicia o servidor Flask"
 	@echo "  make test               - Roda os testes unitários"
 	@echo "  make docker-build       - Constrói a imagem Docker"
@@ -24,12 +23,12 @@ help:
 	@echo "  make clean              - Remove arquivos de cache e imagens Docker"
 
 # Inicializa o projeto, instalando as dependências
-.PHONY: init
-init: create-env
-	@echo "Instalando dependências..."
-	python -m venv .venv
-	source .venv/bin/activate
-	pip install -r requirements.txt
+# .PHONY: init
+# init: create-env
+# 	@echo "Instalando dependências..."
+# 	python3 -m venv .venv
+# 	source .venv/bin/activate
+# 	pip install -r requirements.txt
 
 # Gera o arquivo .env
 .PHONY: create-env

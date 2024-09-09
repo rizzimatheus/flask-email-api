@@ -31,11 +31,6 @@ git clone https://github.com/rizzimatheus/flask-email-api.git
 cd flask-email-api
 ```
 
-Utilize o comando abaixo para executar automaticamente os passos 2, 3 e 4, ou siga as instruções manualmente caso não tenha o make disponível:
-```bash
-make init
-```
-
 ### 2. Criar o Ambiente Virtual (opcional, mas recomendado)
 ```bash
 python3 -m venv .venv
